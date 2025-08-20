@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老鱼来刷步</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-5.3.7-dist/css/bootstrap.css"  rel="stylesheet">
+    <link rel="Shortcut Icon" href="/static/ico/yu.ico" type="image/x-icon">
+</head>
+<body style="background-color: #e3f0ff;">
+
+<!-- # 构建响应式表单 -->
+ <div class="container mt-5">
+    <h2 class="text-center mb-4">老鱼来刷步</h2>
+            <form action="" method="post" novalidate>
+                {% csrf_token %}
+                {% for foo in form %}
+                    <div class="mb-3">
+                        {# 循环取出 number,password,step #}
+                        <label for="name" class="form-label">{{ foo.label }}</label>
+                        {{ foo }}
+                            <div style="color: red">{{ foo.errors.0 }}</div>
+                    </div>
+                {% endfor %}
+                <input type="submit" class="btn btn-primary" value="开始">
+            </form>
+ </div>
+ 
+ <script src="/static/plugins/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+ {# 添加点击开始,显示loading状态 #}
+ <script>
+     const form = document.querySelector('form');
+     form.addEventListener('submit', function() {
+         const submitButton = form.querySelector('input[type="submit"]');
+         submitButton.value = '正在执行，请不要重复提交';
+         submitButton.disabled = true;
+     });
+ </script>
+
+</body>
+
+<footer class="text-center mt-5">
+    <hr>
+    <p>&copy; 2020 power by 愉.</p>
+</footer>
+
+
+</html>

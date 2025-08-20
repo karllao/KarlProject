@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刷步结果</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-5.3.7-dist/css/bootstrap.css"  rel="stylesheet">
+    <link rel="Shortcut Icon" href="/static/ico/yu.ico" type="image/x-icon">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+        }
+        .result-card {
+            min-width: 350px;
+            padding: 2rem 2.5rem;
+            border-radius: 1rem;
+            background: #fff;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+        .result-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .result-message {
+            font-size: 1.25rem;
+            text-align: center;
+            color: #198754;
+        }
+        .return-button {
+            display: inline-block;
+            padding: 8px 24px;
+            background: #409eff;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+        .return-button:hover {
+            background: #66b1ff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="result-card">
+        <div class="result-title">执行结果</div>
+        <div class="result-message">{{ result_message.msg.msg }}</div>
+        <div style="text-align:center; margin-top: 16px;">
+            <a href="/" class="return-button">返回</a>
+        </div>
+    </div>
+    
+
+</body>
+</html>
