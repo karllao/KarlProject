@@ -49,12 +49,13 @@ python3 manage.py migrate ShuaBu
 ```
 
 
+### 配置域名（可选）
+无域名可忽略
+> /KarlProject/setting.py - CSRF_TRUSTED_ORIGINS & ALLOWED_HOSTS
+
 
 # 运行
 ```
 uv run manage.py runserver 0.0.0.0:8000
 ```
 
-### 配置域名
-无域名可忽略
-> /KarlProject/setting.py - CSRF_TRUSTED_ORIGINS

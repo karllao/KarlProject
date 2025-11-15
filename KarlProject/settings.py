@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure--j3ey*z(i34%gk=dccytj3-(esac-sgmmayvi3=qdd(qs7%ed2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# 允许的主机和域名配置，ALLOWED_HOSTS内填写纯域名不需要带http或https，例如：'example.com'；CSRF_TRUSTED_ORIGINS内填写需要带协议头的完整域名，例如：https://example.com
 ALLOWED_HOSTS = []
-
 CSRF_TRUSTED_ORIGINS = ['https://你的域名']
 
 # Application definition
