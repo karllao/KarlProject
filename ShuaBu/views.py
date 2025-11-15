@@ -56,10 +56,11 @@ def main(request):
                 data.update({'result': mi_response})
                 # 记录日志到数据库
                 models.DataLog.objects.create(**data)
-                if mi_response == "success":
-                    # 成功的消息需要特殊处理一下
-                    mi_response = {'msg': {"code": 1, "msg": "刷步成功"}}
-                return render(request, "result.html", {"result_message": mi_response})
+                if mi_response.get('msg').get('code') == 200:
+                    message = {'msg': {"code": 1, "msg": "刷步成功"}}
+                else:
+                    message = {'msg': {"code": 0, "msg": f"刷步失败，原因：{mi_response.get('msg').get('msg') }"}}
+                return render(request, "result.html", {"result_message": message})
             except Exception as e:
                 print('刷步失败', e)
                 data.pop('password')

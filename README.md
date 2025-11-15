@@ -12,12 +12,15 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 ```
 
 ### 白名单配置
-> /ShuaBu/shuabu.py - myphone
+> /ShuaBu/white_list.py - USER_WHITELIST
 
 ### 初次运行虚拟环境配置
 ```
 uv venv
-source .venv/bin/activate
+
+linux/macos: source .venv/bin/activate
+windows: .\.venv\Scripts\activate
+
 uv pip install -e .
 ```
 
